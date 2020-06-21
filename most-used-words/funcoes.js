@@ -40,7 +40,6 @@ function removerseIncluir(padrao) {
     return function (array) {
         return array.filter(el => !el.includes(padrao))
     }
-
 }
 
 function removerSeApenasNumeros(array) {
@@ -54,7 +53,6 @@ function removerCaracteres(simbolos){
     return function(array){
         return array.map(el => {
             return simbolos.reduce((acc, el) => {
-                console.log(el)
                return acc.split(el).join('')
             }, el)
         })
@@ -65,11 +63,10 @@ function agruparPalavras(palavras){
         const el = palavra.toLowerCase()
         const qtde = acc[el] ? acc[el].qtde + 1 : 1 
         acc[el] = {
-            elemento: el,
+            palavra: el,
             qtde
         }
-        return acc
-        
+        return acc      
     }, {}))
 }
 
